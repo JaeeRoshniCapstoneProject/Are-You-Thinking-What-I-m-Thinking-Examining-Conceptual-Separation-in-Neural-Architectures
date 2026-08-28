@@ -121,8 +121,7 @@ See `data/README.md` for dataset links, expected folder structure, and attributi
 
 ## Authors
 
-Jaee Ponde and Roshni Agarwal  
-Supervisor: Prof. Subhashis Banerjee
+[NA]
 
 ## Citation
 
