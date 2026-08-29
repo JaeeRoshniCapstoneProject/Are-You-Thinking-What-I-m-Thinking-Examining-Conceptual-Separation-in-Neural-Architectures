@@ -49,7 +49,7 @@ We analyse final-layer, mean-pooled sentence representations from **BERT-large-u
 - Information Security vs. Theory of Computation
 - Hate Speech vs. No-Hate Speech
 
-Each model folder has four notebooks, numbered to match the CNN experiments:
+Each model folder has four notebooks:
 
 1. **Unprompted embeddings:** last-layer mean-pooled sentence vectors with no task prompt, plus first-moment analyses (PCA, distances, per-neuron KL).
 2. **Prompted embeddings:** the same pipeline with a concept-identifying prompt prepended to each sentence.
@@ -60,7 +60,7 @@ Run 1 then 2 before 3 and 4.
 
 ## Setup
 
-Python 3.10+ is recommended.
+Python 3.10+ is recommended. Install dependencies **once** with the commands below. After that, notebooks skip `pip` if the packages are already importable, so later runs do not repeat the install. The first cell still installs from `requirements.txt` automatically if anything is missing (that first install can take several minutes because of PyTorch).
 
 ```bash
 python -m venv .venv
