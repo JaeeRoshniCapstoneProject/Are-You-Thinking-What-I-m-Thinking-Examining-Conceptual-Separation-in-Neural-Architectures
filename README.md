@@ -12,15 +12,15 @@ Code and data accompanying our work on **conceptual separation** in convolutiona
 │   └── Experiment_3_Pose_Roads.ipynb
 ├── llms/
 │   ├── bert_large/
-│   │   ├── bert_wo_prompt.ipynb
-│   │   ├── bert_w_prompt.ipynb
-│   │   ├── bert_compare_prompted.ipynb
-│   │   └── bert_second_moment_analysis.ipynb
+│   │   ├── Experiment_1_Unprompted_Embeddings.ipynb
+│   │   ├── Experiment_2_Prompted_Embeddings.ipynb
+│   │   ├── Experiment_3_Prompted_vs_Unprompted.ipynb
+│   │   └── Experiment_4_Second_Moment.ipynb
 │   └── gpt_oss_20b/
-│       ├── sentences_without_prompt.ipynb
-│       ├── sentences_with_prompt.ipynb
-│       ├── compare_prompted.ipynb
-│       └── second_moment_analysis.ipynb
+│       ├── Experiment_1_Unprompted_Embeddings.ipynb
+│       ├── Experiment_2_Prompted_Embeddings.ipynb
+│       ├── Experiment_3_Prompted_vs_Unprompted.ipynb
+│       └── Experiment_4_Second_Moment.ipynb
 ├── data/
 │   ├── README.md
 │   └── llm_data/
@@ -49,7 +49,14 @@ We analyse final-layer, mean-pooled sentence representations from **BERT-large-u
 - Information Security vs. Theory of Computation
 - Hate Speech vs. No-Hate Speech
 
-The notebooks contain first-moment geometric analyses, per-neuron KL divergence, prompted vs. unprompted comparisons, and second-moment covariance analyses using the normalised Frobenius norm and permutation tests.
+Each model folder has four notebooks, numbered to match the CNN experiments:
+
+1. **Unprompted embeddings:** last-layer mean-pooled sentence vectors with no task prompt, plus first-moment analyses (PCA, distances, per-neuron KL).
+2. **Prompted embeddings:** the same pipeline with a concept-identifying prompt prepended to each sentence.
+3. **Prompted vs. unprompted:** comparison of saved embeddings (no re-encoding).
+4. **Second moment:** covariance analyses using the normalised Frobenius norm, eigenvalue spectra, Gaussian KL, and permutation tests.
+
+Run 1 then 2 before 3 and 4.
 
 ## Setup
 
@@ -96,14 +103,14 @@ Run notebooks top-to-bottom in the following order when dependencies exist betwe
 | CNN: cats, dogs, cars; PCA/distances/KL | `cnns/Experiment_1_Cats_Dogs_Cars.ipynb` |
 | CNN: Rangoli and microscopy coherence | `cnns/Experiment_2_Rangoli_Microscopy.ipynb` |
 | CNN: cat pose and road domain shift | `cnns/Experiment_3_Pose_Roads.ipynb` |
-| BERT unprompted embeddings and first-moment analysis | `llms/bert_large/bert_wo_prompt.ipynb` |
-| BERT prompted embeddings | `llms/bert_large/bert_w_prompt.ipynb` |
-| BERT prompted/unprompted comparison | `llms/bert_large/bert_compare_prompted.ipynb` |
-| BERT covariance analysis | `llms/bert_large/bert_second_moment_analysis.ipynb` |
-| GPT-OSS-20B unprompted embeddings and first-moment analysis | `llms/gpt_oss_20b/sentences_without_prompt.ipynb` |
-| GPT-OSS-20B prompted embeddings | `llms/gpt_oss_20b/sentences_with_prompt.ipynb` |
-| GPT prompted/unprompted comparison | `llms/gpt_oss_20b/compare_prompted.ipynb` |
-| GPT covariance analysis | `llms/gpt_oss_20b/second_moment_analysis.ipynb` |
+| BERT unprompted embeddings and first-moment analysis | `llms/bert_large/Experiment_1_Unprompted_Embeddings.ipynb` |
+| BERT prompted embeddings | `llms/bert_large/Experiment_2_Prompted_Embeddings.ipynb` |
+| BERT prompted/unprompted comparison | `llms/bert_large/Experiment_3_Prompted_vs_Unprompted.ipynb` |
+| BERT covariance analysis | `llms/bert_large/Experiment_4_Second_Moment.ipynb` |
+| GPT-OSS-20B unprompted embeddings and first-moment analysis | `llms/gpt_oss_20b/Experiment_1_Unprompted_Embeddings.ipynb` |
+| GPT-OSS-20B prompted embeddings | `llms/gpt_oss_20b/Experiment_2_Prompted_Embeddings.ipynb` |
+| GPT prompted/unprompted comparison | `llms/gpt_oss_20b/Experiment_3_Prompted_vs_Unprompted.ipynb` |
+| GPT covariance analysis | `llms/gpt_oss_20b/Experiment_4_Second_Moment.ipynb` |
 
 Generated embeddings, plots, reports, and intermediate results are written under `results/` and are intentionally excluded from version control.
 
